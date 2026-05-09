@@ -20,7 +20,7 @@ const App = () => {
     element:<Products />
     },
     {
-      path:'/productsDetail',
+      path:'/productDetail/:id',
       element:<Productdetails />
     }
   ])

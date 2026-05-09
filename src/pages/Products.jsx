@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { ProContext } from '../context/ProductContext'
 import Navbar from '../components/Navbar'
+import { Link } from 'react-router-dom'
 
 const Products = () => {
 
@@ -11,15 +12,20 @@ const Products = () => {
     <>
     <Navbar />
 
+    <div className='flex justify-between items-center p-2 bg-gray-800'>
+      <p className='text-white font-bold'>Our Products</p> 
+      <Link to='/' 
+      className='bg-red-500 p-1 pr-2.5 pl-2.5 rounded text-white font-bold'>Back</Link>
+    </div>
+
   <div className="flex flex-wrap justify-center gap-8 p-6 bg-gray-800 min-h-screen">
-  {item.map((elem, idx) => {
+  {item.map((elem) => {
     return (
-      <div
-        key={idx}
+      <Link to={`/productDetail/${elem.id}`}
         className="w-[320px] bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
       >
 
-        <div className="bg-gray-100 p-5 flex justify-center">
+        <div className="bg-gray-200 p-5 flex justify-center">
           <img
             className="h-60 object-contain hover:scale-105 transition duration-300"
             src={elem.image}
@@ -47,7 +53,7 @@ const Products = () => {
             </button>
           </div>
         </div>
-      </div>
+      </Link>
     );
   })}
 </div>
