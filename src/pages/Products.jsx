@@ -18,7 +18,7 @@ const Products = () => {
       className='bg-red-500 p-1 pr-2.5 pl-2.5 rounded text-white font-bold'>Back</Link>
     </div>
 
-  <div className="flex flex-wrap justify-center gap-8 p-6 bg-gray-800 min-h-screen">
+  <div className="flex flex-wrap justify-center gap-8 p-6 bg-gradient-to-br from-slate-900 via-gray-800 to-black min-h-screen">
   {item.map((elem) => {
     return (
       <Link to={`/productDetail/${elem.id}`}
